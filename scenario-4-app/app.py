@@ -1,8 +1,10 @@
 import streamlit as st
 import pandas as pd
 import joblib
+import os
 
-model = joblib.load("churn_model.joblib")
+model_path = os.path.join(os.path.dirname(__file__), "churn_model.joblib")
+model = joblib.load(model_path)
 
 st.title("Customer Churn Predictor")
 
